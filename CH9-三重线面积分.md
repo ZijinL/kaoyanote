@@ -9,7 +9,7 @@
 3. ![image-20201117205638571](CH9-三重线面积分.assets/image-20201117205638571.png)
    画出图像：确定交线，确定两平面和$z$轴交点，画出简略图，然后看图积分。
    先一后二：根据$\frac 1 3(x^2+y^2) \le z \le \sqrt{4-(x^2+y^2)} $先对$z$积分，然后再极坐标积分。
-   先二后一：利用图像，对$z$进行分段，即$0 \le z \le 1$和$1 \le z \le 2$，然后对应$x,y$分别的范围。
+   先二后一：利用图像，对$z$进行分段，即$0 \le z \le 1$和$1 \le z \le 2$，然后对应$x,y$分别的范围。333 
    柱面积分：先确定$z$的范围，然后再根据$r$的取值进行积分。
 4. ![image-20201117215133664](CH9-三重线面积分.assets/image-20201117215133664.png)
    奇偶性应用：如果积分区域关于$yOz$平面对称，且被积函数是关于$x$的奇函数，则积分为零。
@@ -119,6 +119,7 @@
    4. 奇偶性：尤其是奇函数
    5. 轮换对称性：部分轮换对称、完全轮换对称
    6. 回忆一下二重积分的极坐标补上$r$ 
+   
 2. 曲线积分
    1. Ⅰ类曲线-无方向
       1. 直角坐标：$\int{f(x,y) ds}=\int{f(x,y)\sqrt{1+y'^2}dx}$ 
@@ -146,6 +147,7 @@
    
       $\int_L{Pdx + Qdy} = \int_L{(P\cos\alpha + Q\cos\beta) ds}$ 
       其中$\cos\alpha, \cos\beta$是右向曲线$L$在该点的方向余弦。
+   
 3. 曲面积分
    1. Ⅰ类曲面-无方向-投影代入积分-投带积
    
@@ -161,4 +163,14 @@
    
       $\iint\limits_\Sigma{Pdydz + Qdzdx + Rdxdy} = \iint\limits_\Sigma{(P \cos \alpha + Q\cos\beta + R\cos\gamma)dS}$ 
       其中$\cos\alpha, \cos\beta, \cos\gamma$是曲面$\Sigma$在点$(x,y,z)$处的正法线向量的方向余弦。
+   
+4. 其他
 
+   1. 梯度：$\nabla \vec F = \bold {grad\ F } =  F_x \vec i + F_y \vec j + F_z \vec k$ 
+   2. 散度：$div \vec F = \frac{\part P}{\part x}+\frac{\part Q}{\part Y}+\frac{\part R}{\part Z}$  其中$\vec F = P\vec i + Q\vec j + R\vec k$ 
+   3. 旋度：$\bold{rot F} = \begin{vmatrix}
+      \vec i & \vec j & \vec k\\
+      \frac{\part}{\part x} & \frac{\part}{\part y} & \frac{\part}{\part z}\\
+      P & Q & R\\
+      \end{vmatrix}$  其中$\vec F = P\vec i + Q\vec j + R\vec k$ 
+   4. 方向余弦、方向导数
