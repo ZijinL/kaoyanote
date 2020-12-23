@@ -29,7 +29,6 @@
    $P(AC \cap (AB \cup C)) = P(AC)$，因为$AC \sube C$
 8. ![image-20201126230339024](PB1-随机事件.assets/image-20201126230339024.png)
    也可文氏图
-9. ![image-20201126230408625](PB1-随机事件.assets/image-20201126230408625.png)
 
 ## 事件的独立性
 
@@ -66,12 +65,20 @@
 2. 概率计算
 
    1. 加法公式（两个事件、三个事件）
+
+      $P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) +  P(A\cap B \cap C)$ 
+
    2. 减法公式
+
    3. 乘法公式
+
    4. 条件概率
+
    5. 全概率贝叶斯：图形
+
    6. 几何概型
 
 3. 独立性
 
    $P(AB) = P(A)\times P(B) \Lrarr P(A|B)= P(A) \Lrarr  P(B|A) = P(B)$ 
+

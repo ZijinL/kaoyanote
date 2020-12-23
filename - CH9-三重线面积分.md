@@ -3,7 +3,8 @@
 ## 三重积分计算
 
 1. ![image-20201117202547466](CH9-三重线面积分.assets/image-20201117202547466.png)
-   三重积分交换积分顺序：把三重积分看作二重积分交换积分顺序，一次不行就来两次。
+   三重积分==交换积分顺序==：把三重积分看作二重积分交换积分顺序，一次不行就来两次。
+   多重积分最大的特点就是可以交换顺序；
 2. ![image-20201117204216115](CH9-三重线面积分.assets/image-20201117204216115.png)
    球坐标下的三重积分；注意这里的易错点是$r^2\sin \theta$和$\theta$的取值范围；
 3. ![image-20201117205638571](CH9-三重线面积分.assets/image-20201117205638571.png)
@@ -32,7 +33,7 @@
    方法二：三角换元，一定记得用周期性和奇偶性简化计算，不然算不出来，令$x=\sqrt 2 \cos t, y= \sqrt 2 \sin t$ 
    方法三：全微分法，此处略去。
 4. ![image-20201118114012138](CH9-三重线面积分.assets/image-20201118114012138.png)
-   **积分与路径无关：**$\int_L{P(x,y)dx+Q(x,y)dy}=\oint{Pdx+Qdx} = \frac {\part Q}{\part x} - \frac {\part P}{\part y}$ 
+   ==**积分与路径无关：**==$\int_L{P(x,y)dx+Q(x,y)dy}=\oint{Pdx+Qdx} = \frac {\part Q}{\part x} - \frac {\part P}{\part y}$ 
    **任意路径曲线积分：**这里是取直线，实际上是取直线或者与坐标轴平行的直线。
 5. ![image-20201118215320765](CH9-三重线面积分.assets/image-20201118215320765.png)
    **空间曲线积分：斯托克斯公式、降维法、参数方程法**
@@ -45,7 +46,7 @@
    **降维法：**$z = 2-x-y$，$dz = -dx -dy$，然后利用格林公式和对称性解答。
    **参数方程法：**把$x$看作是参数，然后这里由于有绝对值符号，所以函数需要分成四段进行积分，亲测可以算出来。
 6. ![IMG_20201118_234703](CH9-三重线面积分.assets/IMG_20201118_234703.jpg)
-   解题思路：
+   解题思路：==一次幂都是降维法== 
 
 ## 曲面积分
 
@@ -77,7 +78,7 @@
    解题思路：略
 1. ![image-20201119121236275](CH9-三重线面积分.assets/image-20201119121236275.png)
    解题思路：A B C三个选项的前提都是可微，只有可微才能有这三个结论。要用定义计算。
-   C选项中函数在$(0,0)$点处沿着某一方向的偏微分定义：$\lim\limits_{t\rarr0} {\frac{f(0+t\cos\alpha, 0+t\cos\beta)-f(0,0)} {t}}$ 
+   C选项中函数在$(0,0)$点处沿着某一方向的偏微分定义==方向导数定义==：$\lim\limits_{t\rarr0} {\frac{f(0+t\cos\alpha, 0+t\cos\beta)-f(0,0)} {t}}$ 
 1. ![image-20201119122232075](CH9-三重线面积分.assets/image-20201119122232075.png)
    
 
@@ -126,7 +127,7 @@
       2. 参数方程：$\int{f(x,y)ds} = \int{f[(x(t), y(t)]\sqrt{x(t)'^2, y(t)'^2}dt}$ 
       3. 极坐标：$\int{f(x,y)ds} = \int{f(\rho\cos\theta, \rho\sin\theta)\sqrt{\rho^2+\rho'^2}d\theta}$ 
       
-   2. Ⅱ类曲线-有方向
+   2. Ⅱ类曲线-有方向 ==注意符号==
       1. 格林公式：$\oint_L{Pdx+Qdy} = \iint\limits_D{(\frac{\part Q}{\part x}-\frac{\part P}{\part y})dxdy}$，左边为正
       2. 一般计算：$\oint_L{Pdx+Qdy} = \int_a^b{[P+Q\times y_x']dx} = \int_\alpha^\beta{[P(t)x'(t)+Q(t)y'(t)]dt}$，注意有时需要分段
       
@@ -135,25 +136,25 @@
    4. Ⅱ类空间曲线：
       1. 参数方程法：由于曲线通常为截面得到，这里通常需要分段计算。
          $\oint_L{Pdx+Qdy+Rdz} = \int_a^b{[P+Q\times y_x'+R\times z_x']dx} = \int_\alpha^\beta{[P(t)x'(t) + Q(t)y'(t) + R(t)z'(t)]dt}$ 
-      2. 降维法：将题给的$z=(x,y)$和$dz$的值代入进去，降维成二维曲面（一般是平面）。
-      3. 斯托克斯公式：将空间曲线转为Ⅱ类的空间曲面（一般是平面），然后利用三合一或者定义计算。
-         $\begin{vmatrix}
-         dydz & dzdx & dxdy\\
-         \frac{\part}{\part x} & \frac{\part}{\part y} & \frac{\part}{\part z}\\
-         P & Q & R\\
-         \end{vmatrix}$ 
+      2. 降维法：将题给的$z=(x,y)$和$dz$的值代入进去，降维成二维曲面（一般是平面），投影到$xOy$平面上。
+         3. 斯托克斯公式：将空间曲线转为Ⅱ类的空间曲面（一般是平面），然后利用三合一或者定义计算。
+            $\begin{vmatrix}
+            dydz & dzdx & dxdy\\
+            \frac{\part}{\part x} & \frac{\part}{\part y} & \frac{\part}{\part z}\\
+            P & Q & R\\
+            \end{vmatrix}$ 
       
    5. Ⅰ类和Ⅱ类曲线之间的关系
    
       $\int_L{Pdx + Qdy} = \int_L{(P\cos\alpha + Q\cos\beta) ds}$ 
       其中$\cos\alpha, \cos\beta$是右向曲线$L$在该点的方向余弦。
    
-3. 曲面积分
+3. 曲面积分 
    1. Ⅰ类曲面-无方向-投影代入积分-投带积
    
       1. 一般方法：$\iint\limits_\Sigma {f(x,y,z)dS = \iint\limits_{D_{xy}}{f[x,y,z(x,y)] \sqrt{1 + z_x'^2 + z_y'^2}}dxdy}$ 
    
-   2. Ⅱ类曲面-有方向
+   2. Ⅱ类曲面-有方向 ==注意符号==
    
       1. 高 斯 公 式：$\oiint\limits_\Sigma {Pdydz+Qdzdx+Rdxdy} = \pm \iiint\limits_\Omega{(\frac{\part P}{\part x} + \frac{\part Q}{\part y} + \frac{\part R}{\part z})dv}$ ，向外为正
       2. 三合一公式：$\iint\limits_\Sigma {Pdydz+Qdzdx+Rdxdy} = \pm \iint\limits_{D_{xy}} {(-z_x'P-z_y'Q+R)dxdy}$ ，曲面方向与$z$轴夹角小于$\frac \pi 2$为正

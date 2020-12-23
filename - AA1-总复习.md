@@ -186,14 +186,15 @@
 ## LA5-特征值与特征向量
 
 1. 特征值、特征向量
-   1. 数字型：直接算，先$\lambda$后$\alpha$ 
+   1. 数字型：直接算，先$\lambda$后$\alpha$ （秩为1特殊计算）
    2. 抽象型：构造，秩，$r(A) = 1$ 
-   3. 保值运算、保向运算
+   3. 保值运算（相似）、保向运算（大部分其他）；
    4. 传递性
 2. 矩阵相似
    1. 必要性：秩，特征值，$f(A) \sim f(B)$ 
-   2. 充分性：$P_1^{-1}AP_1 = \Lambda = P_2^{-1}AP_2$ 
-   3. 对称矩阵：$Q^TAQ=Q^{-1}AQ=\Lambda$，特征值，特征向量（叉乘），单位化
+   2. 
+   3. 充分性：$P_1^{-1}AP_1 = \Lambda = P_2^{-1}AP_2$ 
+   4. **对称**矩阵：$Q^TAQ=Q^{-1}AQ=\Lambda$，特征值，特征向量（叉乘），单位化
 
 
 
@@ -257,17 +258,20 @@
    1. 可分离变量：分离变量再积分
    2. 一阶齐次：换元法$u=\frac yx$
    3. 一阶线性：父子关系构造指数
+   4. 伯努利方程：$y'+p(x)y+q(x) = f(x) y^n$
+   5. 全微分方程：验证二阶混合偏导，原函数为常数
 2. 二阶微分方程
    1. 二阶非线性：降阶法换元$p=y'$
    2. 二阶线性
       1. 一般二阶线性：解的结构
       2. 二阶齐次：特征方程和通解的结构
-      3. 常系数微分方程：待定系数法和连环算子法
+      3. 常系数微分方程：$y'' + ay' + by = P_m(x)e^{\lambda x}$待定系数法和连环算子法
+      4. 设通解 $Q(x)e^{\lambda x}$，==化简==后$Q'' + (2\lambda + a) Q' + (\lambda^2 + \lambda a + b) Q = P_m(x)$  
 3. 应用
    1. 建立方程
    2. 求导去积分号
-   3. 求解
-   4. 初值条件
+   3. 求解 微分方程解的结构
+   4. **初值条件**：一定要注意的是要看题目是否明确给出了初值条件，是否存在隐含的初值条件，比如上下限相等的时候积分为零；！！！==初值条件很关键== 
 
 
 
@@ -318,7 +322,7 @@
       2. 参数方程：$\int{f(x,y)ds} = \int{f[(x(t), y(t)]\sqrt{x(t)'^2, y(t)'^2}dt}$ 
       3. 极坐标：$\int{f(x,y)ds} = \int{f(\rho\cos\theta, \rho\sin\theta)\sqrt{\rho^2+\rho'^2}d\theta}$ 
 
-   2. Ⅱ类曲线-有方向
+   2. Ⅱ类曲线-有方向 ==注意符号==
 
       1. 格林公式：$\oint_L{Pdx+Qdy} = \iint\limits_D{(\frac{\part Q}{\part x}-\frac{\part P}{\part y})dxdy}$，左边为正
       2. 一般计算：$\oint_L{Pdx+Qdy} = \int_a^b{[P+Q\times y_x']dx} = \int_\alpha^\beta{[P(t)x'(t)+Q(t)y'(t)]dt}$，注意有时需要分段
@@ -329,26 +333,26 @@
 
       1. 参数方程法：由于曲线通常为截面得到，这里通常需要分段计算。
          $\oint_L{Pdx+Qdy+Rdz} = \int_a^b{[P+Q\times y_x'+R\times z_x']dx} = \int_\alpha^\beta{[P(t)x'(t) + Q(t)y'(t) + R(t)z'(t)]dt}$ 
-      2. 降维法：将题给的$z=(x,y)$和$dz$的值代入进去，降维成二维曲面（一般是平面）。
-      3. 斯托克斯公式：将空间曲线转为Ⅱ类的空间曲面（一般是平面），然后利用三合一或者定义计算。
-         $\begin{vmatrix}
-         dydz & dzdx & dxdy\\
-         \frac{\part}{\part x} & \frac{\part}{\part y} & \frac{\part}{\part z}\\
-         P & Q & R\\
-         \end{vmatrix}$ 
+      2. 降维法：将题给的$z=(x,y)$和$dz$的值代入进去，降维成二维曲面（一般是平面），投影到$xOy$平面上。
+         1. 斯托克斯公式：将空间曲线转为Ⅱ类的空间曲面（一般是平面），然后利用三合一或者定义计算。
+            $\begin{vmatrix}
+            dydz & dzdx & dxdy\\
+            \frac{\part}{\part x} & \frac{\part}{\part y} & \frac{\part}{\part z}\\
+            P & Q & R\\
+            \end{vmatrix}$ 
 
    5. Ⅰ类和Ⅱ类曲线之间的关系
 
       $\int_L{Pdx + Qdy} = \int_L{(P\cos\alpha + Q\cos\beta) ds}$ 
       其中$\cos\alpha, \cos\beta$是右向曲线$L$在该点的方向余弦。
 
-3. 曲面积分
+3. 曲面积分 
 
    1. Ⅰ类曲面-无方向-投影代入积分-投带积
 
       1. 一般方法：$\iint\limits_\Sigma {f(x,y,z)dS = \iint\limits_{D_{xy}}{f[x,y,z(x,y)] \sqrt{1 + z_x'^2 + z_y'^2}}dxdy}$ 
 
-   2. Ⅱ类曲面-有方向
+   2. Ⅱ类曲面-有方向 ==注意符号==
 
       1. 高 斯 公 式：$\oiint\limits_\Sigma {Pdydz+Qdzdx+Rdxdy} = \pm \iiint\limits_\Omega{(\frac{\part P}{\part x} + \frac{\part Q}{\part y} + \frac{\part R}{\part z})dv}$ ，向外为正
       2. 三合一公式：$\iint\limits_\Sigma {Pdydz+Qdzdx+Rdxdy} = \pm \iint\limits_{D_{xy}} {(-z_x'P-z_y'Q+R)dxdy}$ ，曲面方向与$z$轴夹角小于$\frac \pi 2$为正
@@ -383,12 +387,19 @@
 
 ## CH4-二重积分
 
-1. 画图
+1. 画图！
+
 2. 奇偶性、轮换对称性
+
 3. 分类
-   1. 直角坐标 - 交换积分顺序
-   2. 极坐标
-   3. （随时灵活换元）
+
+   1. 直角坐标 - ==交换积分顺序 拆分合并==
+   2. 极坐标 - 一定要有 $rdr$ 
+   3. 随时灵活换元
+
+4. 积分表
+
+   ![image-20201220183719011](CH4-二重积分.assets/image-20201220183719011.png)
 
 
 
@@ -464,15 +475,25 @@
 ## PB3-二维随机
 
 1. 二维分布
-   1. 离散型：联合分布表（边缘分布、条件分布）
+   1. 离散型：联合分布表（边缘分布、条件分布）三者的关系很重要
    2. 连续型：$f(x,y)$是根本，进而得到$F(x,y), f_X(x), f_Y(y), f_{Y|X}(y|x)$ 
    3. 独立性：
+
 2. 二维正态分布
+
    1. 独立性：$\rho=0$ 
    2. 边缘：一维 - 正态，线性组合 - 正态
-   3. 凑：配方、除系数、添因子
+   3. 凑：配方、除系数、添因子 
+
 3. 二维随机变量函数分布
-   1. 卷积公式
+
+   1. 卷积公式：$Z = X - Y \ \rarr\ Y = h(X,Z) = X-Z \ \rarr\ f_Z(z) = \int_a^b|\frac{\part h}{\part z}|f(X, h) dx$ 
+      定义求解：$P(Z \le z) = P(X-Y \le z)$ 二重积分做
    2. 全概率公式
    3. 较大较小
+
+4. 正态分布
+
+   **二维正态分布：**$f(x,y) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}\ exp\{- \frac 1 {2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2} + \frac{(y-\mu_2)^2}{\sigma_2^2} -2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1 \sigma_2 }] \}$ 
+   **一维正态分布：**$f(x) = \frac 1{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu^2)}{2\sigma^2}}$ 
 
